@@ -376,13 +376,13 @@
         });
       }
 
-      // ⏱️ ظهور الإشعار الوهمي بعد 12 ثانية
+      // ⏱️ ظهور الإشعار الوهمي بعد 20 ثانية
       setTimeout(() => {
         if (overlay) {
           overlay.classList.add('show');
           console.log('🔔 [محاكاة Meta Quest 2] إشعار: "ذاكرة النظام منخفضة - 80%"');
         }
-      }, 12000);
+      }, 20000);
 
       // إخفاء شاشة التحميل
       window.addEventListener('load', () => {
