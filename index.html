@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="xr-spatial-tracking" content="true">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -12,6 +12,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- إضافة الـ CSS الخارجي -->
+  <link rel="stylesheet" href="style.css">
 
   <style>
     :root {
@@ -58,7 +61,6 @@
       outline: none;
     }
 
-    /* شاشة التحميل */
     #loading-screen {
       position: fixed;
       inset: 0;
@@ -123,175 +125,11 @@
       50%       { text-shadow: 0 0 60px rgba(255,215,0,0.8), 0 0 120px rgba(255,215,0,0.4); }
     }
 
-    /* ========== إشعار Meta Quest 2 الرسمي (محاكاة دقيقة) ========== */
-    #quest-notification-overlay {
+    #hud {
       position: fixed;
       inset: 0;
-      z-index: 10000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    #quest-notification-overlay.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .quest-notification-box {
-      background: rgba(30, 30, 40, 0.92);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 20px;
-      padding: 16px 22px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06);
-      max-width: 380px;
-      width: 90%;
-      animation: questSlideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    @keyframes questSlideUp {
-      from {
-        transform: translateY(20px) scale(0.95);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-    }
-
-    /* الأيقونة الحمراء المميزة */
-    .quest-icon-wrap {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(255, 59, 48, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      border: 1.5px solid rgba(255, 59, 48, 0.5);
-    }
-
-    .quest-icon-inner {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: #ff3b30;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 20px rgba(255, 59, 48, 0.7);
-    }
-
-    .quest-icon-exclaim {
-      color: white;
-      font-size: 18px;
-      font-weight: 900;
-      line-height: 1;
-      font-family: 'Rajdhani', sans-serif;
-    }
-
-    .quest-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .quest-title {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 17px;
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: 0.5px;
-    }
-
-    .quest-message {
-      font-family: 'Cairo', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(220, 220, 240, 0.85);
-      line-height: 1.4;
-    }
-
-    .quest-progress {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 4px;
-    }
-
-    .quest-progress-text {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      color: #ff6b6b;
-      letter-spacing: 0.3px;
-    }
-
-    .quest-progress-bar {
-      flex: 1;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 99px;
-      overflow: hidden;
-    }
-
-    .quest-progress-fill {
-      width: 80%;
-      height: 100%;
-      background: linear-gradient(90deg, #ff9f43, #ff3b30);
-      border-radius: 99px;
-      box-shadow: 0 0 10px rgba(255, 59, 48, 0.5);
-    }
-
-    .quest-dismiss {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.06);
-      border: none;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 18px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
-      flex-shrink: 0;
-      font-family: inherit;
-    }
-
-    .quest-dismiss:hover {
-      background: rgba(255, 255, 255, 0.18);
-      color: #fff;
-    }
-
-    @media (max-width: 500px) {
-      .quest-notification-box {
-        padding: 12px 16px;
-        gap: 10px;
-      }
-      .quest-icon-wrap {
-        width: 36px;
-        height: 36px;
-      }
-      .quest-icon-inner {
-        width: 20px;
-        height: 20px;
-      }
-      .quest-icon-exclaim {
-        font-size: 15px;
-      }
+      z-index: 100;
     }
   </style>
 </head>
@@ -318,87 +156,16 @@
   <!-- غلاف زر الـ VR (تضعه Babylon تلقائياً) -->
   <div id="vr-btn-wrapper"></div>
 
-  <!-- ✅ إشعار Meta Quest 2 الرسمي (وهمي) -->
-  <div id="quest-notification-overlay">
-    <div class="quest-notification-box">
-      <div class="quest-icon-wrap">
-        <div class="quest-icon-inner">
-          <span class="quest-icon-exclaim">!</span>
-        </div>
-      </div>
-      <div class="quest-content">
-        <div class="quest-title">ذاكرة النظام منخفضة</div>
-        <div class="quest-message">أغلق بعض التطبيقات لتحسين الأداء</div>
-        <div class="quest-progress">
-          <span class="quest-progress-text">80%</span>
-          <div class="quest-progress-bar">
-            <div class="quest-progress-fill"></div>
-          </div>
-        </div>
-      </div>
-      <button class="quest-dismiss" id="quest-dismiss-btn" aria-label="تجاهل">✕</button>
-    </div>
-  </div>
-
   <!-- سكريبتات Babylon -->
   <script src="https://cdn.babylonjs.com/babylon.js"></script>
   <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
   <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
 
-  <!-- ملفات المشروع الخارجية -->
-  <script src="confi.js"></script>
-  <script src="mai.js"></script>
-  <script src="movemet.js"></script>
-  <script src="interactios.js"></script>
-
-  <!-- ⚙️ سكريبت الإشعار الوهمي -->
-  <script>
-    (function() {
-      const overlay = document.getElementById('quest-notification-overlay');
-      const dismissBtn = document.getElementById('quest-dismiss-btn');
-
-      function hideNotification() {
-        if (overlay) {
-          overlay.classList.remove('show');
-        }
-      }
-
-      if (dismissBtn) {
-        dismissBtn.addEventListener('click', hideNotification);
-      }
-
-      // أيضاً إخفاء عند النقر خارج المربع
-      if (overlay) {
-        overlay.addEventListener('click', function(e) {
-          if (e.target === overlay) {
-            hideNotification();
-          }
-        });
-      }
-
-      // ⏱️ ظهور الإشعار الوهمي بعد 20 ثانية
-      setTimeout(() => {
-        if (overlay) {
-          overlay.classList.add('show');
-          console.log('🔔 [محاكاة Meta Quest 2] إشعار: "ذاكرة النظام منخفضة - 80%"');
-        }
-      }, 20000);
-
-      // إخفاء شاشة التحميل
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          const loadingScreen = document.getElementById('loading-screen');
-          if (loadingScreen) {
-            loadingScreen.style.opacity = '0';
-            setTimeout(() => {
-              loadingScreen.style.display = 'none';
-            }, 600);
-          }
-        }, 2800);
-      });
-
-    })();
-  </script>
+  <!-- ملفات المشروع -->
+  <script src="confing.js"></script>
+  <script src="main.js"></script>
+  <script src="movement.js"></script>
+  <script src="interactions.js"></script>
 
 </body>
 </html>
