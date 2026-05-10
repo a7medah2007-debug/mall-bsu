@@ -90,10 +90,10 @@ const WATER = {
 
 const VEGETABLES = {
   items: [
-    { model: 'assets/models/eggplant.glb',  position: [-8.643, 0.667, 41.88], count: 20, scale: [0.00667, 0.00667, 0.00667], boxSize: [0.667, 0.667], price: 10 },
-    { model: 'assets/models/tomato.glb', position: [-8.643, 0.667, 43.213], count: 20, scale: [0.001, 0.001, 0.001], boxSize: [0.667, 0.667], price: 12 },
-    { model: 'assets/models/pepper.glb', position: [-8.643, 0.667, 44.547], count: 20, scale: [0.00333, 0.00333, 0.00333], boxSize: [0.667, 0.667], price: 15 },
-    { model: 'assets/models/potatoes.glb', position: [-8.643, 0.667, 45.823], count: 20, scale: [0.01, 0.01, 0.01], boxSize: [0.667, 0.667], price: 8  },
+    { model: 'assets/models/eggplant.glb',  position: [-8.643, 0.667, 41.88], count: 0, scale: [0.00667, 0.00667, 0.00667], boxSize: [0.667, 0.667], price: 10 },
+    { model: 'assets/models/tomato.glb', position: [-8.643, 0.667, 43.213], count: 0, scale: [0.001, 0.001, 0.001], boxSize: [0.667, 0.667], price: 12 },
+    { model: 'assets/models/pepper.glb', position: [-8.643, 0.667, 44.547], count: 0, scale: [0.00333, 0.00333, 0.00333], boxSize: [0.667, 0.667], price: 15 },
+    { model: 'assets/models/potatoes.glb', position: [-8.643, 0.667, 45.823], count: 0, scale: [0.01, 0.01, 0.01], boxSize: [0.667, 0.667], price: 8  },
   ]
 };
 
@@ -204,11 +204,7 @@ const CARTS = {
 
 const WALKERS = {
   models: [
-    {
-      path: 'assets/models/walker1.glb',
-      scaleMin: 0.6,
-      scaleMax: 0.6,
-    },
+ 
     {
       path: 'assets/models/walker2.glb',
       scaleMin: 0.5,
@@ -240,8 +236,8 @@ const WALKERS = {
 };
 
 const SOUNDS = {
-  cash: 'assets/sounds/Cash.mp3',
-  space: 'assets/sounds/space.mp3',
+  
+  
   loss: 'assets/sounds/loss.mp3',
   much: 'assets/sounds/much.mp3',
   background: 'assets/sounds/background.mp3',
