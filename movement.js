@@ -247,7 +247,58 @@ function _triggerWin() {
     if (bg && !bg.paused) bg.pause();
   } catch(e) {}
 
+  const itemCount = window._lastCartCount ?? 0;
+
+  // شاشة VR بـ Babylon GUI
+  if (window._inVR && window.xrHelper) {
+    try {
+      const advTex = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI('winUI', true, window.scene);
+
+      const overlay = new BABYLON.GUI.Rectangle('overlay');
+      overlay.width = '100%';
+      overlay.height = '100%';
+      overlay.background = 'rgba(0,0,0,0.85)';
+      overlay.thickness = 0;
+      advTex.addControl(overlay);
+
+      const card = new BABYLON.GUI.Rectangle('card');
+      card.width = '70%';
+      card.height = '300px';
+      card.cornerRadius = 20;
+      card.color = '#FFD700';
+      card.thickness = 3;
+      card.background = '#0d1b2a';
+      overlay.addControl(card);
+
+      const stack = new BABYLON.GUI.StackPanel();
+      stack.isVertical = true;
+      stack.paddingTop = '20px';
+      card.addControl(stack);
+
+      const addTxt = (txt, size, color) => {
+        const t = new BABYLON.GUI.TextBlock();
+        t.text = txt;
+        t.fontSize = size;
+        t.color = color;
+        t.fontWeight = 'bold';
+        t.height = `${size + 24}px`;
+        t.fontFamily = 'Cairo';
+        stack.addControl(t);
+      };
+
+      addTxt('🎉 شكراً لزيارتك!', 38, '#FFD700');
+      addTxt(`🛒 اشتريت ${itemCount} منتج`, 26, '#ffffff');
+      addTxt('🚪 إلى اللقاء...', 20, '#aaaaaa');
+
+      return;
+    } catch(e) {
+      console.warn('VR GUI فشل:', e.message);
+    }
+  }
+
+  // fallback للديسكتوب
   const div = document.createElement('div');
+  div.id = 'win-screen';
   div.style.cssText = `
     position:fixed; inset:0; z-index:99999;
     background:rgba(0,0,0,0.85);
@@ -259,7 +310,7 @@ function _triggerWin() {
     <div style="background:#0d1b2a; border:3px solid #FFD700; border-radius:20px; padding:40px 60px; text-align:center;">
       <div style="font-size:52px;">🎉</div>
       <div style="font-size:32px; font-weight:900; color:#FFD700; margin:10px 0;">شكراً لزيارتك!</div>
-      <div style="font-size:20px; color:#fff; margin-bottom:8px;">🛒 اشتريت ${window._lastCartCount ?? 0} منتج</div>
+      <div style="font-size:20px; color:#fff; margin-bottom:8px;">🛒 اشتريت ${itemCount} منتج</div>
       <div style="font-size:16px; color:#aaa;">🚪 إلى اللقاء...</div>
     </div>
   `;
