@@ -398,7 +398,7 @@ async function loadAssets() {
     }
   });
   await Promise.all(frozenPromises);
-
+  setTimeout(() => { if (typeof initFrozenQueue === 'function') initFrozenQueue(); }, 500);
   SIGNS.forEach((s) => loadModel(s.model, s.position, s.rotation || [0, 0, 0], s.scale));
   
   // الآن كل النماذج جاهزة، نخفي شاشة التحميل
