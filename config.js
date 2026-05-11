@@ -19,7 +19,7 @@ const CAMERA = {
   fov: 75,
   near: 0.1,
   far: 1000,
-  heightLimit: { min: 0.167, max: 1.333 },
+  heightLimit: { min: 0.167, max: 1.7 },
   vrFixedHeight: 1.333,
 };
 
