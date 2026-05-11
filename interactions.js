@@ -107,7 +107,7 @@ const GRAB_SQ      = 9;    // 3m²
 const GRAB_CART_SQ = 25;   // 5m²
 
 // ✅ المسافة القصوى المسموحة بين السلة والمنتج لتفعيل الإضافة التلقائية
-const AUTO_CART_MAX_DIST    = 1.5;                          // 1.5 متر
+const AUTO_CART_MAX_DIST    = 3;                          // 1.5 متر
 const AUTO_CART_MAX_DIST_SQ = AUTO_CART_MAX_DIST * AUTO_CART_MAX_DIST;
 
 function grabNearestProduct() {
