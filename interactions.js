@@ -108,8 +108,8 @@ function updateHeldItem() {
 window.updateHeldItem = updateHeldItem;
 
 // ── Grab Product ──────────────────────────────────────────────────────────────
-const GRAB_SQ      = 9;    // 3m²
-const GRAB_CART_SQ = 25;   // 5m²
+const GRAB_SQ      = 2.25;    // 3m²
+const GRAB_CART_SQ = 1;   // 5m²
 
 const AUTO_CART_MAX_DIST    = 3;
 const AUTO_CART_MAX_DIST_SQ = AUTO_CART_MAX_DIST * AUTO_CART_MAX_DIST;
