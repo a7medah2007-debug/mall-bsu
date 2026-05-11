@@ -269,6 +269,7 @@ window.updateLoop = function () {
   updateCart();
   updateWalkers();
   updateCashier();
+  updateFrozenQueue();
   window.updateHeldItem?.();
   window.updateCartItems?.();
 };
