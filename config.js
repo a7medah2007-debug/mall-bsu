@@ -70,8 +70,8 @@ const FRIDGES = {
 
 const JUICES = {
   model: 'assets/models/can3.glb',
-  name: 'عصير 25 جنيه',
-  price: 25,
+  name: 'عصير 20 جنيه',
+  price: 20,
   scale: [0.167, 0.167, 0.167],
   inFridge: [
     { startX: -3.6, startY: 1.817, startZ: 20.167, shelves: 1, bottlesPerShelf: 1, spacingY: 0.4, spacingZ: 0.087 },
@@ -80,8 +80,8 @@ const JUICES = {
 
 const WATER = {
   model: 'assets/models/water.glb',
-  name: 'مياه 10 جنيه',
-  price: 10,
+  name: 'مياه 5 جنيه',
+  price: 5,
   scale: [0.05, 0.05, 0.05],
   inFridge: [
     { startX: -3.6, startY: 2.1, startZ: 21.367, shelves: 1, bottlesPerShelf: 1, spacingY: 0.4, spacingZ: 0.087 },
@@ -91,9 +91,9 @@ const WATER = {
 const VEGETABLES = {
   items: [
     { model: 'assets/models/eggplant.glb',  position: [-8.643, 0.5, 41.88], count: 0, scale: [0.00667, 0.00667, 0.00667], boxSize: [0.667, 0.667], price: 10 },
-    { model: 'assets/models/tomato.glb', position: [-8.643, 0.5, 43.213], count: 0, scale: [0.001, 0.001, 0.001], boxSize: [0.667, 0.667], price: 12 },
+    { model: 'assets/models/tomato.glb', position: [-8.643, 0.5, 43.213], count: 0, scale: [0.001, 0.001, 0.001], boxSize: [0.667, 0.667], price: 5 },
     { model: 'assets/models/pepper.glb', position: [-8.643, 0.667, 44.547], count: 0, scale: [0.00333, 0.00333, 0.00333], boxSize: [0.667, 0.667], price: 15 },
-    { model: 'assets/models/potatoes.glb', position: [-8.643, 0.667, 45.823], count: 0, scale: [0.01, 0.01, 0.01], boxSize: [0.667, 0.667], price: 8  },
+    { model: 'assets/models/potatoes.glb', position: [-8.643, 0.667, 45.823], count: 0, scale: [0.01, 0.01, 0.01], boxSize: [0.667, 0.667], price: 10  },
   ]
 };
 
@@ -120,15 +120,15 @@ const PRICE_BOARDS = [
     size: [0.5, 0.167] 
   },
   { 
-    name: 'عصير 25 ج', 
-    price: 25, 
+    name: 'عصير 20 ج', 
+    price: 20, 
     position: [-3.233, 1.833, 20.0],
     rotation: [0, -Math.PI/2, 0], 
     size: [0.833, 0.2] 
   },
   { 
-    name: 'مياه 10 ج', 
-    price: 10, 
+    name: 'مياه 5 ج', 
+    price: 5, 
     position: [-3.233, 1.833, 21.333],
     rotation: [0, -Math.PI/2, 0], 
     size: [0.833, 0.2] 
@@ -141,8 +141,8 @@ const PRICE_BOARDS = [
     size: [0.5, 0.167] 
   },
   { 
-    name: '       طماطم ( الكيلو 12 جنيه )', 
-    price: 12, 
+    name: '       طماطم ( الكيلو 5 جنيه )', 
+    price: 5, 
     position: [-8.643, 1.167, 43.213], 
     rotation: [0, Math.PI/2, 0], 
     size: [0.5, 0.167] 
@@ -155,8 +155,8 @@ const PRICE_BOARDS = [
     size: [0.5, 0.167] 
   },
   { 
-    name: ' بطاطس (الكيلو 8 جنيه )', 
-    price: 8, 
+    name: ' بطاطس (الكيلو 10 جنيه )', 
+    price: 10, 
     position: [-8.643, 1.167, 45.823], 
     rotation: [0, Math.PI/2, 0], 
     size: [0.5, 0.167] 
