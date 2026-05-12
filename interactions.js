@@ -357,7 +357,7 @@ function grabCart() {
 
   nearest.position.x = cp.x + camDir.x * 1.5;
   nearest.position.z = cp.z + camDir.z * 1.5;
-  nearest.position.y = 0.2;
+  nearest.position.y = 0;
   nearest.rotation.y = Math.atan2(camDir.x, camDir.z);
 
   window.attachedCart = nearest;
