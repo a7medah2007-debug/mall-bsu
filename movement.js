@@ -370,7 +370,7 @@ function _shiftQueue() {
   const remaining = _fqPeople.filter(p => p.state !== 'done');
   if (remaining.length === 0) {
     _fqPeople = []; _fqActive = false;
-    setTimeout(() => _spawnQueue(), 2000);
+    setTimeout(() => _spawnQueue(), 20000);
     return;
   }
   remaining.sort((a, b) => (a.mesh.position?.z ?? 9999) - (b.mesh.position?.z ?? 9999));
