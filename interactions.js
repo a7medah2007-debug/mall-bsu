@@ -76,7 +76,7 @@ function _camDir() {
   if (!cam) return new BABYLON.Vector3(0, 0, 1);
   const rawForward = cam.getDirection(BABYLON.Vector3.Forward()).clone();
   rawForward.negateInPlace();
-  return rawForward;
+  return rawForward
 }
 
 function _getCartPos() {
@@ -85,7 +85,7 @@ function _getCartPos() {
   const d  = _camDir();
   d.y = 0;
   if (d.lengthSquared() > 0.0001) d.normalizeToRef(d);
-  return new BABYLON.Vector3(cp.x + d.x * 1.5, cp.y, cp.z + d.z * 1.5);
+  return new BABYLON.Vector3(cp.x + d.x *0.5, cp.y, cp.z + d.z * 0.5);
 }
 
 // ── Held Item Update ──────────────────────────────────────────────────────────
