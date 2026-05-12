@@ -185,7 +185,7 @@ function updateCart() {
   cart.position.x = pos.x + fwd.x * 0.3;
   cart.position.z = pos.z + fwd.z * 0.3;
   cart.position.y = 0.0;
-  cart.rotation.y = angle;
+  cart.rotation.y = angle + Math.PI;
 }
 
 let _wLast = performance.now();
