@@ -195,7 +195,7 @@ const STAFF = {
 
 const CARTS = {
   model: 'assets/models/cart.glb',
-  scale: [1.5, 1.5, 1.5],
+  scale: [1.3, 1.3, 1.3],
   positions: [
     [1.323, 0, 15.397],
     [4.383, 0, 14.04],
