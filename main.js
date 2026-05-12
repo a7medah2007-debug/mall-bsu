@@ -12,7 +12,7 @@ const VR_PITCH_CORRECTION = 0.06;
 const VR_ROLL_CORRECTION  = -0.03;
 
 // ── إعدادات الطول الثابت في VR ─────────────────────────────────────────
-const VR_FIXED_HEIGHT = (typeof CAMERA !== 'undefined' && CAMERA.vrFixedHeight) || 2.5;
+const VR_FIXED_HEIGHT = (typeof CAMERA !== 'undefined' && CAMERA.vrFixedHeight) || 1.7;
 
 // ── Engine ──────────────────────────────────────────────────────────────────
 const canvas = document.getElementById('game-canvas');
