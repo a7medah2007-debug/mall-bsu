@@ -176,9 +176,16 @@ function updateCart() {
   const pos = window.playerPos;
   if (!pos) return;
 
-  cart.position.x = pos.x;
-  cart.position.z = pos.z + 0.3;
+  const angle = window._inVR
+    ? (window._lastSnapAngle ?? 0)
+    : (window.camera?.rotation?.y ?? 0);
+
+  const fwd = new BABYLON.Vector3(Math.sin(angle), 0, Math.cos(angle));
+
+  cart.position.x = pos.x + fwd.x * 0.3;
+  cart.position.z = pos.z + fwd.z * 0.3;
   cart.position.y = 0.0;
+  cart.rotation.y = angle;
 }
 
 let _wLast = performance.now();
