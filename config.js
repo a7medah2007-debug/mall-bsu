@@ -90,8 +90,8 @@ const WATER = {
 
 const VEGETABLES = {
   items: [
-    { model: 'assets/models/eggplant.glb',  position: [-8.643, 0.667, 41.88], count: 0, scale: [0.00667, 0.00667, 0.00667], boxSize: [0.667, 0.667], price: 10 },
-    { model: 'assets/models/tomato.glb', position: [-8.643, 0.667, 43.213], count: 0, scale: [0.001, 0.001, 0.001], boxSize: [0.667, 0.667], price: 12 },
+    { model: 'assets/models/eggplant.glb',  position: [-8.643, 0.5, 41.88], count: 0, scale: [0.00667, 0.00667, 0.00667], boxSize: [0.667, 0.667], price: 10 },
+    { model: 'assets/models/tomato.glb', position: [-8.643, 0.5, 43.213], count: 0, scale: [0.001, 0.001, 0.001], boxSize: [0.667, 0.667], price: 12 },
     { model: 'assets/models/pepper.glb', position: [-8.643, 0.667, 44.547], count: 0, scale: [0.00333, 0.00333, 0.00333], boxSize: [0.667, 0.667], price: 15 },
     { model: 'assets/models/potatoes.glb', position: [-8.643, 0.667, 45.823], count: 0, scale: [0.01, 0.01, 0.01], boxSize: [0.667, 0.667], price: 8  },
   ]
@@ -179,10 +179,10 @@ const STAFF = {
     scale: [0.667, 0.667, 0.667],
   },
   guards: [
-   { model: 'assets/models/guard.glb', position: [-5.857, 0, 38.113], scale: [0.9, 0.9, 0.9] },
-    { model: 'assets/models/guard.glb', position: [-9.133, 0, 36.903], scale: [0.9, 0.9, 0.9] },
-    { model: 'assets/models/guard.glb', position: [7.773, 0, -0.177], scale: [0.9, 0.9, 0.9] },
-    { model: 'assets/models/guard.glb', position: [-5.85, 0, -0.71], scale: [0.9, 0.9, 0.9] },
+   { model: 'assets/models/guard.glb', position: [-5.857, 0, 38.113], scale: [1.2, 1.2, 1.2] },
+    { model: 'assets/models/guard.glb', position: [-9.133, 0, 36.903], scale: [1.2, 1.2, 1.2] },
+    { model: 'assets/models/guard.glb', position: [7.773, 0, -0.177], scale: [1.2, 1.2, 1.2] },
+    { model: 'assets/models/guard.glb', position: [-5.85, 0, -0.71], scale: [1.2, 1.2, 1.2] },
   ],
   noPassZone: {
     guardIndex: 3,
