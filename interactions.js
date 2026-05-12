@@ -216,18 +216,15 @@ function addToCart(productArg) {
   }
 
   const cartPos = _getCartPos();
-  const cartBaseY = (window.attachedCart?.position.y ?? 0) + 0.5;
-
+  const cartBaseY = 0.5;
   const halfWidth  = 0.1;
   const halfDepth  = 0.8;
 
   const offsetX = (Math.random() - 0.5) * 2 * halfWidth;
   const offsetZ = (Math.random() - 0.5) * 2 * halfDepth;
 
-  const stackLevel = Math.floor(Math.random() * 3);
-  const productHeight = 0.25;
-  const offsetY = stackLevel * productHeight + Math.random() * 1.0;
-
+  const offsetY = Math.random() * 0.3;
+  
   product.rotation.x = Math.PI / 2;
   product.rotation.y = Math.random() * Math.PI * 2;
   product.rotation.z = 0;
