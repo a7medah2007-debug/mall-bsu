@@ -175,23 +175,25 @@ function updateCart() {
   const cam = _lookCam();
   if (!cam) return;
 
-  // ============================================================
-  // مهم: نستخدم الدالة العالمية window._camDir() (المعرفة في main.js)
-  // بدلاً من cam.getDirection - هذا يضمن أن العربة تسير في نفس الاتجاه
-  // الذي يتوقعه interactions.js (forward معكوس بسبب useRightHandedSystem)
-  // كان السبب في تحرك العربة بالاتجاه الخاطئ هو عدم توحيد هذه الدالة
-  // ============================================================
-  const fwd = (typeof window._camDir === 'function')
-    ? window._camDir()
-    : cam.getDirection(BABYLON.Vector3.Forward()).negate();
-  fwd.y = 0;
-  if (fwd.lengthSquared() > 0.0001) fwd.normalizeToRef(fwd);
+  // نحسب اتجاه الجسم من rotation الكاميرا في المحور Y بس (snap turn)
+  let bodyAngle;
+  if (window._inVR && window._xrCamera) {
+    const q = window._xrCamera.rotationQuaternion;
+    bodyAngle = q ? Math.atan2(
+      2 * (q.w * q.y + q.x * q.z),
+      1 - 2 * (q.y * q.y + q.z * q.z)
+    ) : 0;
+  } else {
+    bodyAngle = window.camera?.rotation?.y ?? 0;
+  }
+
+  const fwd = new BABYLON.Vector3(Math.sin(bodyAngle), 0, Math.cos(bodyAngle));
 
   const camPos = cam.globalPosition ?? cam.position;
   cart.position.x = camPos.x + fwd.x * 1.5;
   cart.position.z = camPos.z + fwd.z * 1.5;
-  cart.position.y = 0;
-  cart.rotation.y = Math.atan2(fwd.x, fwd.z);
+  cart.position.y = 0.0;
+  cart.rotation.y = bodyAngle;
 }
 
 let _wLast = performance.now();
