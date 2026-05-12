@@ -311,7 +311,9 @@ window.grabAndAddToCart = grabAndAddToCart;
 function updateCartItems() {
   const cart = window.attachedCart;
   if (!cart || !window.cartItems?.length) return;
-  const n  = window.cartItems.length;
+  const n = window.cartItems.length;
+  const cosY = Math.cos(cart.rotation.y);
+  const sinY = Math.sin(cart.rotation.y);
   for (let i = 0; i < n; i++) {
     const v = window.cartItems[i].metadata?._cartVisual;
     if (!v) continue;
@@ -323,9 +325,9 @@ function updateCartItems() {
     if (!off) continue;
 
     v.position.set(
-      cart.position.x + off.x,
+      cart.position.x + off.x * cosY - off.z * sinY,
       cart.position.y + 0.5 + off.y,
-      cart.position.z + off.z
+      cart.position.z + off.x * sinY + off.z * cosY
     );
 
     if (rot) {
@@ -336,7 +338,6 @@ function updateCartItems() {
   }
 }
 window.updateCartItems = updateCartItems;
-
 // ── Grab/Drop Cart ────────────────────────────────────────────────────────────
 function grabCart() {
   if (window.attachedCart) return;
