@@ -216,7 +216,7 @@ function addToCart(productArg) {
   }
 
   const cartPos = _getCartPos();
-  const cartBaseY = (window.attachedCart?.position.y ?? 0) + 1.2;
+  const cartBaseY = (window.attachedCart?.position.y ?? 0) + 0.5;
 
   const halfWidth  = 0.1;
   const halfDepth  = 0.8;
@@ -327,7 +327,7 @@ function updateCartItems() {
 
     v.position.set(
       cart.position.x + off.x,
-      cart.position.y + 1.2 + off.y,
+      cart.position.y + 0.5 + off.y,
       cart.position.z + off.z
     );
 
