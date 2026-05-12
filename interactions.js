@@ -322,11 +322,13 @@ function updateCartItems() {
     const rot = productRef.metadata._cartRotation;
     if (!off) continue;
 
-    v.position.set(
-      cart.position.x + off.x,
-      cart.position.y + 0.5 + off.y,
-      cart.position.z + off.z
-    );
+    const cosY = Math.cos(cart.rotation.y);
+const sinY = Math.sin(cart.rotation.y);
+v.position.set(
+  cart.position.x + off.x * cosY - off.z * sinY,
+  cart.position.y + 0.5 + off.y,
+  cart.position.z + off.x * sinY + off.z * cosY
+);
 
     if (rot) {
       v.rotation.x = rot.x;
