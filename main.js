@@ -705,6 +705,7 @@ function pollXRControllersUnified(xr) {
 }
 
 function _applySnapTurn(angle) {
+  window._lastSnapAngle = (window._lastSnapAngle ?? 0) + angle;
   if (window._inVR && window._xrCamera) {
     if (window._xrCamera.rotationQuaternion) {
       const q = BABYLON.Quaternion.RotationAxis(BABYLON.Vector3.Up(), angle);
