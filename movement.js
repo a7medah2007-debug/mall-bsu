@@ -180,7 +180,7 @@ function updateCart() {
     ? (window._lastSnapAngle ?? 0)
     : (window.camera?.rotation?.y ?? 0);
 
-  const fwd = new BABYLON.Vector3(Math.sin(angle), 0, Math.cos(angle));
+  const fwd = new BABYLON.Vector3(-Math.sin(angle), 0, -Math.cos(angle));
 
   cart.position.x = pos.x + fwd.x * 0.3;
   cart.position.z = pos.z + fwd.z * 0.3;
