@@ -217,8 +217,8 @@ function addToCart(productArg) {
 
   const cartPos = _getCartPos();
   const cartBaseY = 0.5;
-  const halfWidth  = 0.1;
-  const halfDepth  = 0.8;
+  const halfWidth  = 0.3;
+  const halfDepth  = 0.45;
 
   const offsetX = (Math.random() - 0.5) * 2 * halfWidth;
   const offsetZ = (Math.random() - 0.5) * 2 * halfDepth;
