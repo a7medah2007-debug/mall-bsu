@@ -19,7 +19,7 @@ const DECEL    = 16;
 let   _vx = 0, _vz = 0;
 let   _lastT = performance.now();
 
-const _VR_FIXED_HEIGHT = (typeof CAMERA !== 'undefined' && CAMERA.vrFixedHeight) || 2.5;
+const _VR_FIXED_HEIGHT = (typeof CAMERA !== 'undefined' && CAMERA.vrFixedHeight) || 1.7;
 
 const _colRay = new BABYLON.Ray(BABYLON.Vector3.Zero(), BABYLON.Vector3.Forward(), COL_DIST);
 
