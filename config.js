@@ -43,8 +43,8 @@ const PRODUCTS = {
     price: 15,
     scale: [0.133, 0.133, 0.133],
     shelves: [
-      { position: [-1.443, 1.417, 19.897], countX: 1, countZ: 1, spacingX: 0.4, spacingZ: -0.167, rotation: [0, 0, 0] },
-      { position: [-1.443, 0.877, 19.897], countX: 1, countZ: 1, spacingX: 0.4, spacingZ: -0.167, rotation: [180, 0, 0] },
+      { position: [-1.443, 1.417, 19.897], countX: 15, countZ: 2, spacingX: 0.4, spacingZ: -0.167, rotation: [0, 0, 0] },
+      { position: [-1.443, 0.877, 19.897], countX: 15, countZ: 2, spacingX: 0.4, spacingZ: -0.167, rotation: [180, 0, 0] },
     ]
   },
   chips3: {
@@ -53,8 +53,8 @@ const PRODUCTS = {
     price: 10,
     scale: [0.133, 0.133, 0.133],
     shelves: [
-      { position: [6.4, 1.433, 13.617], countX: 1, countZ: 1, spacingX: -0.167, spacingZ: 0.333, rotation: [0, 0, -135] },
-      { position: [6.4, 0.877, 13.617], countX: 1, countZ: 1, spacingX: -0.167, spacingZ: 0.333, rotation: [0, -160, -135] },
+      { position: [6.4, 1.433, 13.617], countX: 2, countZ: 15, spacingX: -0.167, spacingZ: 0.333, rotation: [0, 0, -135] },
+      { position: [6.4, 0.877, 13.617], countX: 2, countZ: 15, spacingX: -0.167, spacingZ: 0.333, rotation: [0, -160, -135] },
     ]
   }
 };
@@ -74,7 +74,7 @@ const JUICES = {
   price: 20,
   scale: [0.167, 0.167, 0.167],
   inFridge: [
-    { startX: -3.6, startY: 1.817, startZ: 20.167, shelves: 1, bottlesPerShelf: 1, spacingY: 0.4, spacingZ: 0.087 },
+    { startX: -3.6, startY: 1.817, startZ: 20.167, shelves: 4, bottlesPerShelf: 10, spacingY: 0.4, spacingZ: 0.087 },
   ]
 };
 
@@ -84,7 +84,7 @@ const WATER = {
   price: 5,
   scale: [0.05, 0.05, 0.05],
   inFridge: [
-    { startX: -3.6, startY: 2.1, startZ: 21.367, shelves: 1, bottlesPerShelf: 1, spacingY: 0.4, spacingZ: 0.087 },
+    { startX: -3.6, startY: 2.1, startZ: 21.367, shelves: 4, bottlesPerShelf: 10, spacingY: 0.4, spacingZ: 0.087 },
   ]
 };
 
