@@ -187,7 +187,7 @@ function updateCart() {
     bodyAngle = window.camera?.rotation?.y ?? 0;
   }
 
-  const fwd = new BABYLON.Vector3(Math.sin(bodyAngle), 0, Math.cos(bodyAngle));
+  const fwd = new BABYLON.Vector3(-Math.sin(bodyAngle), 0, -Math.cos(bodyAngle));
 
   const camPos = cam.globalPosition ?? cam.position;
   cart.position.x = camPos.x + fwd.x * 1.5;
