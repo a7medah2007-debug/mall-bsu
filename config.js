@@ -90,10 +90,10 @@ const WATER = {
 
 const VEGETABLES = {
   items: [
-    { model: 'assets/models/eggplant.glb',  position: [-8.643, 0.5, 41.88], count: 0, scale: [0.00667, 0.00667, 0.00667], boxSize: [0.667, 0.667], price: 10 },
-    { model: 'assets/models/tomato.glb', position: [-8.643, 0.5, 43.213], count: 0, scale: [0.001, 0.001, 0.001], boxSize: [0.667, 0.667], price: 5 },
-    { model: 'assets/models/pepper.glb', position: [-8.643, 0.667, 44.547], count: 0, scale: [0.00333, 0.00333, 0.00333], boxSize: [0.667, 0.667], price: 15 },
-    { model: 'assets/models/potatoes.glb', position: [-8.643, 0.667, 45.823], count: 0, scale: [0.01, 0.01, 0.01], boxSize: [0.667, 0.667], price: 10  },
+    { model: 'assets/models/eggplant.glb',  position: [-8.643, 0.5, 41.88], count: 0, scale: [0.00667, 0.00667, 0.00667], boxSize: [0.667, 0.667], price: 4 },
+    { model: 'assets/models/tomato.glb', position: [-8.643, 0.5, 43.213], count: 0, scale: [0.001, 0.001, 0.001], boxSize: [0.667, 0.667], price: 2.5 },
+    { model: 'assets/models/pepper.glb', position: [-8.643, 0.5, 44.547], count: 0, scale: [0.00333, 0.00333, 0.00333], boxSize: [0.667, 0.667], price: 3 },
+    { model: 'assets/models/potatoes.glb', position: [-8.643, 0.5, 45.823], count: 0, scale: [0.01, 0.01, 0.01], boxSize: [0.667, 0.667], price: 10  },
   ]
 };
 
@@ -134,35 +134,35 @@ const PRICE_BOARDS = [
     size: [0.833, 0.2] 
   },
   { 
-    name: '  باذنجان ( الكيلو ب 10 )', 
-    price: 10, 
+    name: '  باذنجان ( الكيلو 5 حبات )', 
+    price: 20, 
     position: [-8.643, 1.167, 41.88], 
     rotation: [0, Math.PI/2, 0], 
     size: [0.5, 0.167] 
   },
   { 
-    name: '       طماطم ( الكيلو 5 جنيه )', 
-    price: 5, 
+    name: '       طماطم ( الكيلو 4 حبات )', 
+    price: 10, 
     position: [-8.643, 1.167, 43.213], 
     rotation: [0, Math.PI/2, 0], 
     size: [0.5, 0.167] 
   },
   { 
-    name: ' فلفل (  الكيلو 15 جنيه )', 
+    name: ' فلفل (  الكيلو 5 فلفلات )', 
     price: 15, 
     position: [-8.643, 1.167, 44.547], 
     rotation: [0, Math.PI/2, 0], 
     size: [0.5, 0.167] 
   },
   { 
-    name: ' بطاطس (الكيلو 10 جنيه )', 
+    name: ' بطاطس (الكيلو )', 
     price: 10, 
     position: [-8.643, 1.167, 45.823], 
     rotation: [0, Math.PI/2, 0], 
     size: [0.5, 0.167] 
   },
   { 
-    name: 'خضار 20 ج', 
+    name: 'موز  5 حبات ', 
     price: 20, 
     position: [-8.643, 1.167, 47.533], 
     rotation: [0, Math.PI/2, 0], 
