@@ -190,7 +190,7 @@ function updateCart() {
   const camPos = cam.globalPosition ?? cam.position;
   cart.position.x = camPos.x + fwd.x * 1.5;
   cart.position.z = camPos.z + fwd.z * 1.5;
-  cart.position.y = 0.2;
+  cart.position.y = 0;
   cart.rotation.y = Math.atan2(fwd.x, fwd.z);
 }
 
